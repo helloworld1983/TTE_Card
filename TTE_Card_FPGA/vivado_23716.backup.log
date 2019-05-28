@@ -1,0 +1,149 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Jan  3 16:22:29 2018
+# Process ID: 23716
+# Current directory: D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23592 D:\demo_AX7103\18_PCIE_test\FPGA\pcieax7103x4_128ddr3\PCIe.xpr
+# Log file: D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/vivado.log
+# Journal file: D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'.
+WARNING: [IP_Flow 19-3664] IP 'PCIe_util_ds_buf_0_0' generated file not found 'd:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/ip/PCIe_util_ds_buf_0_0/stats.txt'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'PCIe_xdma_0_1' generated file not found 'd:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/ip/PCIe_xdma_0_1/stats.txt'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'PCIe_mig_7series_0_0' generated file not found 'd:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/ip/PCIe_mig_7series_0_0/stats.txt'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'PCIe_rst_mig_7series_0_100M_0' generated file not found 'd:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/ip/PCIe_rst_mig_7series_0_100M_0/stats.txt'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'PCIe_auto_us_0' generated file not found 'd:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/ip/PCIe_auto_us_0/stats.txt'. Please regenerate to continue.
+WARNING: [IP_Flow 19-3664] IP 'PCIe_auto_cc_0' generated file not found 'd:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/ip/PCIe_auto_cc_0/stats.txt'. Please regenerate to continue.
+WARNING: [BD 41-1661] One or more IPs have been locked in the design 'PCIe.bd'. Please run report_ip_status for more details and recommendations on how to fix this issue.
+List of locked IPs:
+PCIe_util_ds_buf_0_0
+PCIe_xdma_0_1
+PCIe_rst_mig_7series_0_100M_0
+PCIe_clk_wiz_0_0
+PCIe_mig_7series_0_0
+PCIe_axi_interconnect_0_1
+PCIe_auto_us_0
+PCIe_auto_cc_0
+
+INFO: [Project 1-230] Project 'PCIe.xpr' upgraded for this version of Vivado.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 851.281 ; gain = 143.340
+update_compile_order -fileset sources_1
+open_bd_design {D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/PCIe.bd}
+Adding cell -- xilinx.com:ip:util_ds_buf:2.1 - util_ds_buf_0
+Adding cell -- xilinx.com:ip:xdma:3.1 - xdma_0
+Adding cell -- xilinx.com:ip:clk_wiz:5.4 - clk_wiz_0
+Adding cell -- xilinx.com:ip:mig_7series:4.0 - mig_7series_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_200M
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/locked(undef) and /mig_7series_0/sys_rst(rst)
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_clock_converter:2.1 - auto_cc
+Successfully read diagram <PCIe> from BD file <D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/PCIe.bd>
+open_bd_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 941.316 ; gain = 71.891
+open_bd_design {D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/PCIe.bd}
+report_ip_status -name ip_status 
+upgrade_ip [get_ips  {PCIe_xdma_0_1 PCIe_axi_interconnect_0_1 PCIe_rst_mig_7series_0_100M_0 PCIe_clk_wiz_0_0 PCIe_util_ds_buf_0_0 PCIe_mig_7series_0_0}] -log ip_upgrade.log
+Upgrading 'D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/PCIe.bd'
+INFO: [IP_Flow 19-3422] Upgraded PCIe_axi_interconnect_0_1 (AXI Interconnect 2.1) from revision 14 to revision 16
+INFO: [IP_Flow 19-3422] Upgraded PCIe_clk_wiz_0_0 (Clocking Wizard 5.4) from revision 1 to revision 3
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/sys_rst(rst) and /clk_wiz_0_upgraded_ipi/locked(undef)
+INFO: [IP_Flow 19-3422] Upgraded PCIe_mig_7series_0_0 (Memory Interface Generator (MIG 7 Series) 4.0) from revision 4 to revision 5
+WARNING: [BD 41-1731] Type mismatch between connected pins: /clk_wiz_0/locked(undef) and /mig_7series_0_upgraded_ipi/sys_rst(rst)
+INFO: [IP_Flow 19-3422] Upgraded PCIe_rst_mig_7series_0_100M_0 (Processor System Reset 5.0) from revision 11 to revision 12
+INFO: [IP_Flow 19-3422] Upgraded PCIe_util_ds_buf_0_0 (Utility Buffer 2.1) from revision 6 to revision 7
+INFO: [Device 21-403] Loading part xc7a100tfgg484-2
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'axilite_master_scale' from 'Megabytes' to 'Kilobytes' has been ignored for IP 'PCIe_xdma_0_1'
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'axilite_master_size' from '1' to '4' has been ignored for IP 'PCIe_xdma_0_1'
+WARNING: [IP_Flow 19-3501] Upgraded PCIe_xdma_0_1 from DMA/Bridge Subsystem for PCI Express (PCIe) 3.1 to DMA/Bridge Subsystem for PCI Express (PCIe) 4.0, with warnings. Please review the message log.
+CRITICAL WARNING: [Coretcl 2-1279] The upgrade of 'PCIe_xdma_0_1' has identified issues that may require user intervention. Please review the upgrade log 'd:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/ip_upgrade.log', and verify that the upgraded IP is correctly configured.
+Wrote  : <D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/PCIe.bd> 
+Wrote  : <D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/ui/bd_2b17f10f.ui> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/ip_upgrade.log'.
+upgrade_ip: Time (s): cpu = 00:00:23 ; elapsed = 00:00:38 . Memory (MB): peak = 1314.414 ; gain = 353.168
+export_ip_user_files -of_objects [get_ips {PCIe_xdma_0_1 PCIe_axi_interconnect_0_1 PCIe_rst_mig_7series_0_100M_0 PCIe_clk_wiz_0_0 PCIe_util_ds_buf_0_0 PCIe_mig_7series_0_0}] -no_script -sync -force -quiet
+generate_target all [get_files  D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/PCIe.bd]
+Wrote  : <D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/PCIe.bd> 
+VHDL Output written to : D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/synth/PCIe.v
+VHDL Output written to : D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/sim/PCIe.v
+VHDL Output written to : D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/hdl/PCIe_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block util_ds_buf_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mig_7series_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_200M .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/ip/PCIe_auto_us_0/PCIe_auto_us_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'd:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/ip/PCIe_auto_cc_0/PCIe_auto_cc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_cc .
+Exporting to file D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/hw_handoff/PCIe.hwh
+Generated Block Design Tcl file D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/hw_handoff/PCIe_bd.tcl
+Generated Hardware Definition File D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/synth/PCIe.hwdef
+generate_target: Time (s): cpu = 00:00:14 ; elapsed = 00:00:31 . Memory (MB): peak = 1364.016 ; gain = 49.602
+catch { config_ip_cache -export [get_ips -all PCIe_util_ds_buf_0_0] }
+catch { config_ip_cache -export [get_ips -all PCIe_xdma_0_1] }
+catch { config_ip_cache -export [get_ips -all PCIe_clk_wiz_0_0] }
+catch { config_ip_cache -export [get_ips -all PCIe_mig_7series_0_0] }
+catch { config_ip_cache -export [get_ips -all PCIe_rst_mig_7series_0_100M_0] }
+catch { config_ip_cache -export [get_ips -all PCIe_auto_us_0] }
+catch { config_ip_cache -export [get_ips -all PCIe_auto_cc_0] }
+export_ip_user_files -of_objects [get_files D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/PCIe.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/PCIe.bd]
+launch_runs -jobs 4 {PCIe_util_ds_buf_0_0_synth_1 PCIe_xdma_0_1_synth_1 PCIe_clk_wiz_0_0_synth_1 PCIe_mig_7series_0_0_synth_1 PCIe_rst_mig_7series_0_100M_0_synth_1 PCIe_auto_us_0_synth_1 PCIe_auto_cc_0_synth_1}
+[Wed Jan  3 16:26:10 2018] Launched PCIe_util_ds_buf_0_0_synth_1, PCIe_xdma_0_1_synth_1, PCIe_clk_wiz_0_0_synth_1, PCIe_mig_7series_0_0_synth_1, PCIe_rst_mig_7series_0_100M_0_synth_1, PCIe_auto_us_0_synth_1, PCIe_auto_cc_0_synth_1...
+Run output will be captured here:
+PCIe_util_ds_buf_0_0_synth_1: D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.runs/PCIe_util_ds_buf_0_0_synth_1/runme.log
+PCIe_xdma_0_1_synth_1: D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.runs/PCIe_xdma_0_1_synth_1/runme.log
+PCIe_clk_wiz_0_0_synth_1: D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.runs/PCIe_clk_wiz_0_0_synth_1/runme.log
+PCIe_mig_7series_0_0_synth_1: D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.runs/PCIe_mig_7series_0_0_synth_1/runme.log
+PCIe_rst_mig_7series_0_100M_0_synth_1: D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.runs/PCIe_rst_mig_7series_0_100M_0_synth_1/runme.log
+PCIe_auto_us_0_synth_1: D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.runs/PCIe_auto_us_0_synth_1/runme.log
+PCIe_auto_cc_0_synth_1: D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.runs/PCIe_auto_cc_0_synth_1/runme.log
+export_simulation -of_objects [get_files D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.srcs/sources_1/bd/PCIe/PCIe.bd] -directory D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.ip_user_files/sim_scripts -ip_user_files_dir D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.ip_user_files -ipstatic_source_dir D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.cache/compile_simlib/modelsim} {questa=D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.cache/compile_simlib/questa} {riviera=D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.cache/compile_simlib/riviera} {activehdl=D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+not writing pins
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFE0000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFE0000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+not writing pins
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFE0000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFE0000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+INFO: [xilinx.com:ip:xdma:4.0-1] PCIe_xdma_0_1:  Val_hex_64:FFFFF000
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.runs/synth_1
+
+launch_runs synth_1 -jobs 4
+[Wed Jan  3 16:30:42 2018] Launched PCIe_xdma_0_1_synth_1...
+Run output will be captured here: D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.runs/PCIe_xdma_0_1_synth_1/runme.log
+[Wed Jan  3 16:30:42 2018] Launched synth_1...
+Run output will be captured here: D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 4
+[Wed Jan  3 16:40:31 2018] Launched impl_1...
+Run output will be captured here: D:/demo_AX7103/18_PCIE_test/FPGA/pcieax7103x4_128ddr3/PCIe.runs/impl_1/runme.log
+reset_run impl_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jan  3 16:41:48 2018...
