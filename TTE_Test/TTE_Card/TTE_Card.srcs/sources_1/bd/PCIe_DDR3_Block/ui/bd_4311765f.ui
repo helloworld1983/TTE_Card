@@ -1,0 +1,53 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port pcie_rst -pg 1 -y -60 -defaultsOSRD
+preplace port DDR3_0 -pg 1 -y -380 -defaultsOSRD
+preplace port S02_ACLK_0 -pg 1 -y -230 -defaultsOSRD
+preplace port S02_AXI_0 -pg 1 -y -410 -defaultsOSRD
+preplace port pcie_mgt_0 -pg 1 -y -120 -defaultsOSRD
+preplace port sys_ddr -pg 1 -y -300 -defaultsOSRD
+preplace port S01_ARESETN_0 -pg 1 -y -250 -defaultsOSRD
+preplace port sys_clk -pg 1 -y -40 -defaultsOSRD
+preplace port ddr3_rst -pg 1 -y -320 -defaultsOSRD
+preplace port S02_ARESETN_0 -pg 1 -y -210 -defaultsOSRD
+preplace port S01_AXI_0 -pg 1 -y -430 -defaultsOSRD
+preplace port reset_rtl_0 -pg 1 -y -380 -defaultsOSRD
+preplace port S01_ACLK_0 -pg 1 -y -270 -defaultsOSRD
+preplace inst rst_mig_7series_0_100M -pg 1 -lvl 3 -y -220 -defaultsOSRD
+preplace inst mig_7series_0 -pg 1 -lvl 2 -y -340 -defaultsOSRD
+preplace inst xdma_0 -pg 1 -lvl 2 -y -70 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -y -310 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 4 -y -330 -defaultsOSRD
+preplace inst util_ds_buf_0 -pg 1 -lvl 1 -y -70 -defaultsOSRD
+preplace netloc mig_7series_0_mmcm_locked 1 2 1 680
+preplace netloc mig_7series_0_DDR3 1 2 3 N -380 1140 -150 1500
+preplace netloc S02_ACLK_0_1 1 0 4 20J -220 NJ -220 760J -330 1120J
+preplace netloc xdma_0_axi_aclk 1 2 2 750J -360 1170J
+preplace netloc resetn_0_1 1 0 1 N
+preplace netloc axi_mem_intercon_M00_AXI 1 1 4 360 60 NJ 60 NJ 60 1490
+preplace netloc sys_rst_n_0_1 1 0 2 20J -140 350J
+preplace netloc S02_ARESETN_0_1 1 0 4 NJ -210 NJ -210 770J -320 1110J
+preplace netloc xdma_0_axi_aresetn 1 2 2 740J -400 1180
+preplace netloc mig_7series_0_ui_clk 1 2 2 690 -390 1190
+preplace netloc util_ds_buf_0_IBUF_OUT 1 1 1 N
+preplace netloc S01_AXI_0_1 1 0 4 30J -460 NJ -460 NJ -460 1190J
+preplace netloc rst_mig_7series_0_100M_peripheral_aresetn 1 1 3 350 -440 680J -430 1150
+preplace netloc CLK_IN_D_0_1 1 0 1 40
+preplace netloc clk_wiz_0_clk_out1 1 1 1 340
+preplace netloc clk_in1_0_1 1 0 1 N
+preplace netloc xdma_0_M_AXI 1 2 2 700J -440 1180J
+preplace netloc S01_ACLK_0_1 1 0 4 40J -240 NJ -240 710J -350 1160J
+preplace netloc reset_rtl_0_1 1 0 2 NJ -380 340J
+preplace netloc mig_7series_0_ui_clk_sync_rst 1 2 1 720
+preplace netloc xdma_0_pcie_mgt 1 2 3 N -120 N -120 N
+preplace netloc S01_ARESETN_0_1 1 0 4 30J -230 NJ -230 730J -340 1130J
+preplace netloc S02_AXI_0_1 1 0 4 40J -450 NJ -450 NJ -450 1170J
+levelinfo -pg 1 0 190 520 940 1340 1520 -top -510 -bot 120
+"
+}
+{
+   "da_axi4_cnt":"2",
+   "da_board_cnt":"2"
+}
