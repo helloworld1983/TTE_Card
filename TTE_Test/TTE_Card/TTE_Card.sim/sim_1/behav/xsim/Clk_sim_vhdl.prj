@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../TTE_Card.ip_user_files/bd/Clock_Block/ip/Clock_Block_util_ds_buf_0_0/util_ds_buf.vhd" \
+"../../../../TTE_Card.ip_user_files/bd/Clock_Block/ip/Clock_Block_util_ds_buf_0_0/sim/Clock_Block_util_ds_buf_0_0.vhd" \
+
+# Do not sort compile order
+nosort

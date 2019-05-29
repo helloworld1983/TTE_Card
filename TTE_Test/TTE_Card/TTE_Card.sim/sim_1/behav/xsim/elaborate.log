@@ -1,0 +1,33 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivavdo2018/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 29865ef3c393471981f133755532dee1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot Clk_sim_behav xil_defaultlib.Clk_sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=4.5,C...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.Clock_Block_clk_wiz_0_0_clk_wiz
+Compiling module xil_defaultlib.Clock_Block_clk_wiz_0_0
+Compiling architecture ibuf_v of entity unisim.IBUF [\IBUF(1,9)(1,1)(1,4)(1,7)\]
+Compiling architecture ibufds_gte2_v of entity unisim.IBUFDS_GTE2 [\IBUFDS_GTE2(0,1)\]
+Compiling architecture imp of entity xil_defaultlib.util_ds_buf [\util_ds_buf(c_buf_type="ibufdsg...]
+Compiling architecture clock_block_util_ds_buf_0_0_arch of entity xil_defaultlib.Clock_Block_util_ds_buf_0_0 [clock_block_util_ds_buf_0_0_defa...]
+Compiling module xil_defaultlib.Clock_Block
+Compiling module xil_defaultlib.Clock_Block_wrapper
+Compiling module xil_defaultlib.Clk_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Clk_sim_behav

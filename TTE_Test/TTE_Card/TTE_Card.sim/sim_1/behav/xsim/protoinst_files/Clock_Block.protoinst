@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"Clock_Block": {
+			"proto_instances": {
+			}
+		}
+	}
+}

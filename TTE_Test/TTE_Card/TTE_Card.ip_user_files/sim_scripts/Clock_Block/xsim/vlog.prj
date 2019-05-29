@@ -1,0 +1,8 @@
+verilog xil_defaultlib --include "../../../../TTE_Card.srcs/sources_1/bd/Clock_Block/ipshared/85a3" \
+"../../../bd/Clock_Block/ip/Clock_Block_clk_wiz_0_0/Clock_Block_clk_wiz_0_0_clk_wiz.v" \
+"../../../bd/Clock_Block/ip/Clock_Block_clk_wiz_0_0/Clock_Block_clk_wiz_0_0.v" \
+"../../../bd/Clock_Block/sim/Clock_Block.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

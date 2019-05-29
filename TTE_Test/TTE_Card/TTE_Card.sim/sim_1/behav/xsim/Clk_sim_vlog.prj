@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../TTE_Card.srcs/sources_1/bd/PCIe_DDR3_Block/ipshared/85a3" --include "../../../../TTE_Card.srcs/sources_1/bd/Clock_Block/ipshared/85a3" \
+"../../../../TTE_Card.ip_user_files/bd/Clock_Block/ip/Clock_Block_clk_wiz_0_0/Clock_Block_clk_wiz_0_0_clk_wiz.v" \
+"../../../../TTE_Card.ip_user_files/bd/Clock_Block/ip/Clock_Block_clk_wiz_0_0/Clock_Block_clk_wiz_0_0.v" \
+"../../../../TTE_Card.ip_user_files/bd/Clock_Block/sim/Clock_Block.v" \
+"../../../../TTE_Card.srcs/sources_1/imports/hdl/Clock_Block_wrapper.v" \
+"../../../../TTE_Card.srcs/sim_1/new/Clk_sim.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

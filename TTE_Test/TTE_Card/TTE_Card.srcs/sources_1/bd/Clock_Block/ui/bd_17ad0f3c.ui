@@ -1,0 +1,26 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port PLL_Clk_in -pg 1 -y -320 -defaultsOSRD
+preplace port Sys_Clk_Locked -pg 1 -y -340 -defaultsOSRD
+preplace port Crystal_Clk_in -pg 1 -y -160 -defaultsOSRD
+preplace port Sys_Clk_100M -pg 1 -y -320 -defaultsOSRD
+preplace port Sys_Clk_200M -pg 1 -y -360 -defaultsOSRD
+preplace port Sys_Clk_150M -pg 1 -y -300 -defaultsOSRD
+preplace port Sys_rst -pg 1 -y -340 -defaultsOSRD
+preplace portBus Sys_Clk -pg 1 -y -170 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 2 -y -330 -defaultsOSRD
+preplace inst util_ds_buf_0 -pg 1 -lvl 1 -y -160 -defaultsOSRD
+preplace netloc clk_wiz_0_locked 1 2 1 500J
+preplace netloc resetn_0_1 1 0 2 NJ -340 NJ
+preplace netloc util_ds_buf_0_IBUF_OUT 1 1 2 NJ -170 NJ
+preplace netloc CLK_IN_D_0_1 1 0 1 N
+preplace netloc clk_in1_0_1 1 0 2 NJ -320 NJ
+preplace netloc clk_wiz_0_clk_out1 1 2 1 NJ
+preplace netloc clk_wiz_0_clk_out2 1 2 1 490J
+preplace netloc clk_wiz_0_clk_out3 1 2 1 480J
+levelinfo -pg 1 -310 40 390 530 -top -500 -bot 120
+"
+}
+0

@@ -1,0 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Academic/PCIe_Dev/TTE_Card/TTE_Test/TTE_Card/TTE_Card.ip_user_files/bd/Clock_Block/ip/Clock_Block_clk_wiz_0_0/Clock_Block_clk_wiz_0_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Clock_Block_clk_wiz_0_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Academic/PCIe_Dev/TTE_Card/TTE_Test/TTE_Card/TTE_Card.ip_user_files/bd/Clock_Block/ip/Clock_Block_clk_wiz_0_0/Clock_Block_clk_wiz_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Clock_Block_clk_wiz_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Academic/PCIe_Dev/TTE_Card/TTE_Test/TTE_Card/TTE_Card.ip_user_files/bd/Clock_Block/sim/Clock_Block.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Clock_Block
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Academic/PCIe_Dev/TTE_Card/TTE_Test/TTE_Card/TTE_Card.srcs/sources_1/imports/hdl/Clock_Block_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Clock_Block_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/Academic/PCIe_Dev/TTE_Card/TTE_Test/TTE_Card/TTE_Card.srcs/sim_1/new/Clk_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Clk_sim
