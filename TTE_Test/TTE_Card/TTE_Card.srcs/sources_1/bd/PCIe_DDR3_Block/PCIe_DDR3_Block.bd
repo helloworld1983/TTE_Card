@@ -38,7 +38,7 @@
         "mode": "Master",
         "vlnv": "xilinx.com:interface:pcie_7x_mgt_rtl:1.0"
       },
-      "S01_AXI_0": {
+      "AXI_Slv1_buffer": {
         "mode": "Slave",
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
         "parameters": {
@@ -125,7 +125,7 @@
           }
         }
       },
-      "S02_AXI_0": {
+      "AXI_Slv2_buffer": {
         "mode": "Slave",
         "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
         "parameters": {
@@ -214,7 +214,7 @@
       }
     },
     "ports": {
-      "sys_ddr": {
+      "DDR_CLK": {
         "type": "clk",
         "direction": "I",
         "parameters": {
@@ -223,7 +223,7 @@
           }
         }
       },
-      "ddr3_rst": {
+      "sys_rst": {
         "type": "rst",
         "direction": "I"
       },
@@ -240,19 +240,19 @@
           }
         }
       },
-      "S01_ACLK_0": {
+      "AXI_Slv1_ACLK": {
         "type": "clk",
         "direction": "I"
       },
-      "S01_ARESETN_0": {
+      "AXI_Slv1_ARESETN": {
         "type": "rst",
         "direction": "I"
       },
-      "S02_ACLK_0": {
+      "AXI_Slv2_ACLK": {
         "type": "clk",
         "direction": "I"
       },
-      "S02_ARESETN_0": {
+      "AXI_Slv2_ARESETN": {
         "type": "rst",
         "direction": "I"
       }
@@ -903,13 +903,13 @@
     "interface_nets": {
       "S01_AXI_0_1": {
         "interface_ports": [
-          "S01_AXI_0",
+          "AXI_Slv1_buffer",
           "axi_mem_intercon/S01_AXI"
         ]
       },
       "S02_AXI_0_1": {
         "interface_ports": [
-          "S02_AXI_0",
+          "AXI_Slv2_buffer",
           "axi_mem_intercon/S02_AXI"
         ]
       },
@@ -947,13 +947,13 @@
     "nets": {
       "clk_in1_0_1": {
         "ports": [
-          "sys_ddr",
+          "DDR_CLK",
           "clk_wiz_0/clk_in1"
         ]
       },
       "resetn_0_1": {
         "ports": [
-          "ddr3_rst",
+          "sys_rst",
           "clk_wiz_0/resetn"
         ]
       },
@@ -1023,25 +1023,25 @@
       },
       "S01_ACLK_0_1": {
         "ports": [
-          "S01_ACLK_0",
+          "AXI_Slv1_ACLK",
           "axi_mem_intercon/S01_ACLK"
         ]
       },
       "S01_ARESETN_0_1": {
         "ports": [
-          "S01_ARESETN_0",
+          "AXI_Slv1_ARESETN",
           "axi_mem_intercon/S01_ARESETN"
         ]
       },
       "S02_ACLK_0_1": {
         "ports": [
-          "S02_ACLK_0",
+          "AXI_Slv2_ACLK",
           "axi_mem_intercon/S02_ACLK"
         ]
       },
       "S02_ARESETN_0_1": {
         "ports": [
-          "S02_ARESETN_0",
+          "AXI_Slv2_ARESETN",
           "axi_mem_intercon/S02_ARESETN"
         ]
       }
@@ -1049,11 +1049,11 @@
     "addressing": {
       "/": {
         "address_spaces": {
-          "S01_AXI_0": {
+          "AXI_Slv1_buffer": {
             "range": "4G",
             "width": "32"
           },
-          "S02_AXI_0": {
+          "AXI_Slv2_buffer": {
             "range": "4G",
             "width": "32"
           }
