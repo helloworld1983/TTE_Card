@@ -70,6 +70,84 @@ module TTE_Top
     wire                            Sys_Clk_200M;   // MMCM/PLL, from PLL_Clk_in(F10)
     wire                            Sys_Clk_Locked;
 
+    //----------------- PCIe_DDR3_Block --------------------
+    // Slave1-For Ethernet1
+    wire      [31:0]                AXI_Slv1_awaddr;
+    wire      [7:0]                 AXI_Slv1_awlen;
+    wire      [2:0]                 AXI_Slv1_awsize;
+    wire      [1:0]                 AXI_Slv1_awburst;
+    wire      [0:0]                 AXI_Slv1_awlock;
+    wire      [3:0]                 AXI_Slv1_awcache;
+    wire      [2:0]                 AXI_Slv1_awprot;
+    wire      [3:0]                 AXI_Slv1_awqos;
+    wire                            AXI_Slv1_awvalid;
+    wire                            AXI_Slv1_awready;
+
+    wire      [63:0]                AXI_Slv1_wdata;
+    wire      [7:0]                 AXI_Slv1_wstrb;
+    wire                            AXI_Slv1_wlast;
+    wire                            AXI_Slv1_wvalid;
+    wire                            AXI_Slv1_wready;
+
+    wire      [1:0]                 AXI_Slv1_bresp;
+    wire                            AXI_Slv1_bvalid;
+    wire                            AXI_Slv1_bready;
+
+    wire      [31:0]                AXI_Slv1_araddr;
+    wire      [7:0]                 AXI_Slv1_arlen;
+    wire      [2:0]                 AXI_Slv1_arsize;
+    wire      [1:0]                 AXI_Slv1_arburst;
+    wire      [0:0]                 AXI_Slv1_arlock;
+    wire      [3:0]                 AXI_Slv1_arcache;
+    wire      [2:0]                 AXI_Slv1_arprot;
+    wire      [3:0]                 AXI_Slv1_arqos;
+    wire                            AXI_Slv1_arvalid;
+    wire                            AXI_Slv1_arready;
+
+    wire      [63:0]                AXI_Slv1_rdata;
+    wire      [1:0]                 AXI_Slv1_rresp;
+    wire                            AXI_Slv1_rlast;
+    wire                            AXI_Slv1_rvalid;
+    wire                            AXI_Slv1_rready;
+    // Slave2-For Ethernet2
+    wire      [31:0]                AXI_Slv2_awaddr;
+    wire      [7:0]                 AXI_Slv2_awlen;
+    wire      [2:0]                 AXI_Slv2_awsize;
+    wire      [1:0]                 AXI_Slv2_awburst;
+    wire      [0:0]                 AXI_Slv2_awlock;
+    wire      [3:0]                 AXI_Slv2_awcache;
+    wire      [2:0]                 AXI_Slv2_awprot;
+    wire      [3:0]                 AXI_Slv2_awqos;
+    wire                            AXI_Slv2_awvalid;
+    wire                            AXI_Slv2_awready;
+
+    wire      [63:0]                AXI_Slv2_wdata;
+    wire      [7:0]                 AXI_Slv2_wstrb;
+    wire                            AXI_Slv2_wlast;
+    wire                            AXI_Slv2_wvalid;
+    wire                            AXI_Slv2_wready;
+
+    wire      [1:0]                 AXI_Slv2_bresp;
+    wire                            AXI_Slv2_bvalid;
+    wire                            AXI_Slv2_bready;
+
+    wire      [31:0]                AXI_Slv2_araddr;
+    wire      [7:0]                 AXI_Slv2_arlen;
+    wire      [2:0]                 AXI_Slv2_arsize;
+    wire      [1:0]                 AXI_Slv2_arburst;
+    wire      [0:0]                 AXI_Slv2_arlock;
+    wire      [3:0]                 AXI_Slv2_arcache;
+    wire      [2:0]                 AXI_Slv2_arprot;
+    wire      [3:0]                 AXI_Slv2_arqos;
+    wire                            AXI_Slv2_arvalid;
+    wire                            AXI_Slv2_arready;
+
+    wire      [63:0]                AXI_Slv2_rdata;
+    wire      [1:0]                 AXI_Slv2_rresp;
+    wire                            AXI_Slv2_rlast;
+    wire                            AXI_Slv2_rvalid;
+    wire                            AXI_Slv2_rready;
+
 ////////////////////////////////Modules////////////////////////////////
     Clock_Block_wrapper Clk_Gen
     (
@@ -84,74 +162,75 @@ module TTE_Top
         .Sys_rst                    (Sys_rst        )
     );
 
+    
     PCIe_DDR3_Block_wrapper PCIe_DDR3
     (
-        .AXI_Slv1_buffer_araddr     (),
-        .AXI_Slv1_buffer_arburst    (),
-        .AXI_Slv1_buffer_arcache    (),
-        .AXI_Slv1_buffer_arlen      (),
-        .AXI_Slv1_buffer_arlock     (),
-        .AXI_Slv1_buffer_arprot     (),
-        .AXI_Slv1_buffer_arqos      (),
-        .AXI_Slv1_buffer_arready    (),
-        .AXI_Slv1_buffer_arsize     (),
-        .AXI_Slv1_buffer_arvalid    (),
-        .AXI_Slv1_buffer_awaddr     (),
-        .AXI_Slv1_buffer_awburst    (),
-        .AXI_Slv1_buffer_awcache    (),
-        .AXI_Slv1_buffer_awlen      (),
-        .AXI_Slv1_buffer_awlock     (),
-        .AXI_Slv1_buffer_awprot     (),
-        .AXI_Slv1_buffer_awqos      (),
-        .AXI_Slv1_buffer_awready    (),
-        .AXI_Slv1_buffer_awsize     (),
-        .AXI_Slv1_buffer_awvalid    (),
-        .AXI_Slv1_buffer_bready     (),
-        .AXI_Slv1_buffer_bresp      (),
-        .AXI_Slv1_buffer_bvalid     (),
-        .AXI_Slv1_buffer_rdata      (),
-        .AXI_Slv1_buffer_rlast      (),
-        .AXI_Slv1_buffer_rready     (),
-        .AXI_Slv1_buffer_rresp      (),
-        .AXI_Slv1_buffer_rvalid     (),
-        .AXI_Slv1_buffer_wdata      (),
-        .AXI_Slv1_buffer_wlast      (),
-        .AXI_Slv1_buffer_wready     (),
-        .AXI_Slv1_buffer_wstrb      (),
-        .AXI_Slv1_buffer_wvalid     (),
-        .AXI_Slv2_buffer_araddr     (),
-        .AXI_Slv2_buffer_arburst    (),
-        .AXI_Slv2_buffer_arcache    (),
-        .AXI_Slv2_buffer_arlen      (),
-        .AXI_Slv2_buffer_arlock     (),
-        .AXI_Slv2_buffer_arprot     (),
-        .AXI_Slv2_buffer_arqos      (),
-        .AXI_Slv2_buffer_arready    (),
-        .AXI_Slv2_buffer_arsize     (),
-        .AXI_Slv2_buffer_arvalid    (),
-        .AXI_Slv2_buffer_awaddr     (),
-        .AXI_Slv2_buffer_awburst    (),
-        .AXI_Slv2_buffer_awcache    (),
-        .AXI_Slv2_buffer_awlen      (),
-        .AXI_Slv2_buffer_awlock     (),
-        .AXI_Slv2_buffer_awprot     (),
-        .AXI_Slv2_buffer_awqos      (),
-        .AXI_Slv2_buffer_awready    (),
-        .AXI_Slv2_buffer_awsize     (),
-        .AXI_Slv2_buffer_awvalid    (),
-        .AXI_Slv2_buffer_bready     (),
-        .AXI_Slv2_buffer_bresp      (),
-        .AXI_Slv2_buffer_bvalid     (),
-        .AXI_Slv2_buffer_rdata      (),
-        .AXI_Slv2_buffer_rlast      (),
-        .AXI_Slv2_buffer_rready     (),
-        .AXI_Slv2_buffer_rresp      (),
-        .AXI_Slv2_buffer_rvalid     (),
-        .AXI_Slv2_buffer_wdata      (),
-        .AXI_Slv2_buffer_wlast      (),
-        .AXI_Slv2_buffer_wready     (),
-        .AXI_Slv2_buffer_wstrb      (),
-        .AXI_Slv2_buffer_wvalid     (),
+        .AXI_Slv1_buffer_araddr     (AXI_Slv1_araddr),
+        .AXI_Slv1_buffer_arburst    (AXI_Slv1_arburst),
+        .AXI_Slv1_buffer_arcache    (AXI_Slv1_arcache),
+        .AXI_Slv1_buffer_arlen      (AXI_Slv1_arlen),
+        .AXI_Slv1_buffer_arlock     (AXI_Slv1_arlock),
+        .AXI_Slv1_buffer_arprot     (AXI_Slv1_arprot),
+        .AXI_Slv1_buffer_arqos      (AXI_Slv1_arqos),
+        .AXI_Slv1_buffer_arready    (AXI_Slv1_arready),
+        .AXI_Slv1_buffer_arsize     (AXI_Slv1_arsize),
+        .AXI_Slv1_buffer_arvalid    (AXI_Slv1_arvalid),
+        .AXI_Slv1_buffer_awaddr     (AXI_Slv1_awaddr),
+        .AXI_Slv1_buffer_awburst    (AXI_Slv1_awburst),
+        .AXI_Slv1_buffer_awcache    (AXI_Slv1_awcache),
+        .AXI_Slv1_buffer_awlen      (AXI_Slv1_awlen),
+        .AXI_Slv1_buffer_awlock     (AXI_Slv1_awlock),
+        .AXI_Slv1_buffer_awprot     (AXI_Slv1_awprot),
+        .AXI_Slv1_buffer_awqos      (AXI_Slv1_awqos),
+        .AXI_Slv1_buffer_awready    (AXI_Slv1_awready),
+        .AXI_Slv1_buffer_awsize     (AXI_Slv1_awsize),
+        .AXI_Slv1_buffer_awvalid    (AXI_Slv1_awvalid),
+        .AXI_Slv1_buffer_bready     (AXI_Slv1_bready),
+        .AXI_Slv1_buffer_bresp      (AXI_Slv1_bresp),
+        .AXI_Slv1_buffer_bvalid     (AXI_Slv1_bvalid),
+        .AXI_Slv1_buffer_rdata      (AXI_Slv1_rdata),
+        .AXI_Slv1_buffer_rlast      (AXI_Slv1_rlast),
+        .AXI_Slv1_buffer_rready     (AXI_Slv1_rready),
+        .AXI_Slv1_buffer_rresp      (AXI_Slv1_rresp),
+        .AXI_Slv1_buffer_rvalid     (AXI_Slv1_rvalid),
+        .AXI_Slv1_buffer_wdata      (AXI_Slv1_wdata),
+        .AXI_Slv1_buffer_wlast      (AXI_Slv1_wlast),
+        .AXI_Slv1_buffer_wready     (AXI_Slv1_wready),
+        .AXI_Slv1_buffer_wstrb      (AXI_Slv1_wstrb),
+        .AXI_Slv1_buffer_wvalid     (AXI_Slv1_wvalid),
+        .AXI_Slv2_buffer_araddr     (AXI_Slv2_araddr),
+        .AXI_Slv2_buffer_arburst    (AXI_Slv2_arburst),
+        .AXI_Slv2_buffer_arcache    (AXI_Slv2_arcache),
+        .AXI_Slv2_buffer_arlen      (AXI_Slv2_arlen),
+        .AXI_Slv2_buffer_arlock     (AXI_Slv2_arlock),
+        .AXI_Slv2_buffer_arprot     (AXI_Slv2_arprot),
+        .AXI_Slv2_buffer_arqos      (AXI_Slv2_arqos),
+        .AXI_Slv2_buffer_arready    (AXI_Slv2_arready),
+        .AXI_Slv2_buffer_arsize     (AXI_Slv2_arsize),
+        .AXI_Slv2_buffer_arvalid    (AXI_Slv2_arvalid),
+        .AXI_Slv2_buffer_awaddr     (AXI_Slv2_awaddr),
+        .AXI_Slv2_buffer_awburst    (AXI_Slv2_awburst),
+        .AXI_Slv2_buffer_awcache    (AXI_Slv2_awcache),
+        .AXI_Slv2_buffer_awlen      (AXI_Slv2_awlen),
+        .AXI_Slv2_buffer_awlock     (AXI_Slv2_awlock),
+        .AXI_Slv2_buffer_awprot     (AXI_Slv2_awprot),
+        .AXI_Slv2_buffer_awqos      (AXI_Slv2_awqos),
+        .AXI_Slv2_buffer_awready    (AXI_Slv2_awready),
+        .AXI_Slv2_buffer_awsize     (AXI_Slv2_awsize),
+        .AXI_Slv2_buffer_awvalid    (AXI_Slv2_awvalid),
+        .AXI_Slv2_buffer_bready     (AXI_Slv2_bready),
+        .AXI_Slv2_buffer_bresp      (AXI_Slv2_bresp),
+        .AXI_Slv2_buffer_bvalid     (AXI_Slv2_bvalid),
+        .AXI_Slv2_buffer_rdata      (AXI_Slv2_rdata),
+        .AXI_Slv2_buffer_rlast      (AXI_Slv2_rlast),
+        .AXI_Slv2_buffer_rready     (AXI_Slv2_rready),
+        .AXI_Slv2_buffer_rresp      (AXI_Slv2_rresp),
+        .AXI_Slv2_buffer_rvalid     (AXI_Slv2_rvalid),
+        .AXI_Slv2_buffer_wdata      (AXI_Slv2_wdata),
+        .AXI_Slv2_buffer_wlast      (AXI_Slv2_wlast),
+        .AXI_Slv2_buffer_wready     (AXI_Slv2_wready),
+        .AXI_Slv2_buffer_wstrb      (AXI_Slv2_wstrb),
+        .AXI_Slv2_buffer_wvalid     (AXI_Slv2_wvalid),
         .DDR3_0_addr                (DDR3_addr),
         .DDR3_0_ba                  (DDR3_ba),
         .DDR3_0_cas_n               (DDR3_cas_n),
