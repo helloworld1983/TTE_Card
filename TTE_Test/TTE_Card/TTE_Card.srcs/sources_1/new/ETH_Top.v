@@ -138,7 +138,7 @@ module ETH_Top(
 	(
 	  .ARESETN                     (RST_n               ),
 	  .ACLK                        (UI_clk              ),
-	  
+	  // 写地址通道
       .M_AXI_AWID                  (M_AXI_AWID          ),
 	  .M_AXI_AWADDR                (M_AXI_AWADDR        ),
 	  .M_AXI_AWLEN                 (M_AXI_AWLEN         ),
@@ -151,20 +151,20 @@ module ETH_Top(
 	  .M_AXI_AWUSER                (M_AXI_AWUSER        ),
 	  .M_AXI_AWVALID               (M_AXI_AWVALID       ),
 	  .M_AXI_AWREADY               (M_AXI_AWREADY       ),
-	  
+	  // 写数据通道
       .M_AXI_WDATA                 (M_AXI_WDATA         ),
 	  .M_AXI_WSTRB                 (M_AXI_WSTRB         ),
 	  .M_AXI_WLAST                 (M_AXI_WLAST         ),
 	  .M_AXI_WUSER                 (M_AXI_WUSER         ),
 	  .M_AXI_WVALID                (M_AXI_WVALID        ),
 	  .M_AXI_WREADY                (M_AXI_WREADY        ),
-	  
+	  // 写响应通道
       .M_AXI_BID                   (M_AXI_BID           ),
 	  .M_AXI_BRESP                 (M_AXI_BRESP         ),
 	  .M_AXI_BUSER                 (M_AXI_BUSER         ),
 	  .M_AXI_BVALID                (M_AXI_BVALID        ),
 	  .M_AXI_BREADY                (M_AXI_BREADY        ),
-	  
+	  // 读地址通道
       .M_AXI_ARID                  (M_AXI_ARID          ),
 	  .M_AXI_ARADDR                (M_AXI_ARADDR        ),
 	  .M_AXI_ARLEN                 (M_AXI_ARLEN         ),
@@ -177,7 +177,7 @@ module ETH_Top(
 	  .M_AXI_ARUSER                (M_AXI_ARUSER        ),
 	  .M_AXI_ARVALID               (M_AXI_ARVALID       ),
 	  .M_AXI_ARREADY               (M_AXI_ARREADY       ),
-	  
+	  // 读数据通道
       .M_AXI_RID                   (M_AXI_RID           ),
 	  .M_AXI_RDATA                 (M_AXI_RDATA         ),
 	  .M_AXI_RRESP                 (M_AXI_RRESP         ),
@@ -263,13 +263,14 @@ module ETH_Top(
         .write_en                   (write_en           ),
         .write_data                 (write_data         )
     );
+
     eth_top eth_top_inst
     (
         .rst_n                   (RST_n           ),    
         
-        .fifo_data               (read_data       ),           //FIFO读出�??8bit数据/
-        .fifo_data_count         (read_usedw      ),          //FIFO中的数据数量
-        .fifo_rd_en              (read_en         ),             //FIFO读使�??
+        .fifo_data               (read_data       ),           //FIFO璇诲嚭锟??8bit鏁版嵁/
+        .fifo_data_count         (read_usedw      ),          //FIFO涓殑鏁版嵁鏁伴噺
+        .fifo_rd_en              (read_en         ),             //FIFO璇讳娇锟??
         
         .read_req_ack            (read_req_ack    ),
         .read_req                (read_req        ),
@@ -277,7 +278,7 @@ module ETH_Top(
         .ad_sample_ack           (   ),
         .sample_len              (sample_len      ),
         .gmii_tx_clk             (gmii_tx_clk     ),
-        .gmii_rx_clk             (gmii_rx_clk     ) ,
+        .gmii_rx_clk             (gmii_rx_clk     ),
         .gmii_rx_dv              (gmii_rx_dv      ),
         .gmii_rxd                (gmii_rxd        ),
         .gmii_tx_en              (gmii_tx_en      ),

@@ -138,6 +138,7 @@ module PCIe_DDR3_Block_wrapper
   output AXI_Slv1_buffer_wready;
   input [3:0]AXI_Slv1_buffer_wstrb;
   input AXI_Slv1_buffer_wvalid;
+  
   input [31:0]AXI_Slv2_buffer_araddr;
   input [1:0]AXI_Slv2_buffer_arburst;
   input [3:0]AXI_Slv2_buffer_arcache;
