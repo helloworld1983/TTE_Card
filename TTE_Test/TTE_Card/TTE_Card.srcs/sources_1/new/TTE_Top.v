@@ -53,6 +53,18 @@ module TTE_Top
     input       [0:0]               pcie_rxp,
     output      [0:0]               pcie_txn,
     output      [0:0]               pcie_txp,
+    // 数据接口
+    input                           WR_start,
+    input       [31:0]              WR_addr,
+    input       [31:0]              WR_len,
+    input       [31:0]              WR_data,
+    output                          WR_done,
+
+    input                           RD_start,
+    input       [31:0]              RD_addr,
+    input       [31:0]              RD_len, 
+    output      [31:0]              RD_data,
+    output                          RD_done,
     // 复位
     input                           MIG_rst,
     input                           PCIe_rst,
@@ -162,7 +174,6 @@ module TTE_Top
         .Sys_rst                    (Sys_rst        )
     );
 
-    
     PCIe_DDR3_Block_wrapper PCIe_DDR3
     (
         .AXI_Slv1_buffer_araddr     (AXI_Slv1_araddr),
@@ -262,4 +273,60 @@ module TTE_Top
         .pcie_rst                   (PCIe_rst)
     );
 
+    axi_interface   axi_itf
+    (
+
+    .ARESETn_in         (PCIe_rst           ),
+    .ACLK_in            (Sys_Clk_200M       ),
+    // AXI读地址
+    .AXI_araddr_o32     (AXI_Slv1_araddr    ),
+    .AXI_arburst_o2     (AXI_Slv1_arburst   ),
+    .AXI_arcache_o4     (AXI_Slv1_arcache   ),
+    .AXI_arlen_o8       (AXI_Slv1_arlen     ),
+    .AXI_arlock_o1      (AXI_Slv1_arlock    ),
+    .AXI_arprot_o3      (AXI_Slv1_arprot    ),
+    .AXI_arqos_o4       (AXI_Slv1_arqos     ),
+    .AXI_arready_i      (AXI_Slv1_arready   ),
+    .AXI_arsize_o3      (AXI_Slv1_arsize    ),
+    .AXI_arvalid_o      (AXI_Slv1_arvalid   ),
+    // AXI写地址
+    .AXI_awaddr_o32     (AXI_Slv1_awaddr    ),
+    .AXI_awburst_o2     (AXI_Slv1_awburst   ),
+    .AXI_awcache_o4     (AXI_Slv1_awcache   ),
+    .AXI_awlen_o8       (AXI_Slv1_awlen     ),
+    .AXI_awlock_o1      (AXI_Slv1_awlock    ),
+    .AXI_awprot_o3      (AXI_Slv1_awprot    ),
+    .AXI_awqos_o4       (AXI_Slv1_awqos     ),
+    .AXI_awready_i      (AXI_Slv1_awready   ),
+    .AXI_awsize_o3      (AXI_Slv1_awsize    ),
+    .AXI_awvalid_o      (AXI_Slv1_awvalid   ),
+    // AXI写响应
+    .AXI_bready_o       (AXI_Slv1_bready    ),
+    .AXI_bresp_i2       (AXI_Slv1_bresp     ),
+    .AXI_bvalid_i       (AXI_Slv1_bvalid    ),
+    // AXI读数据
+    .AXI_rdata_i32      (AXI_Slv1_rdata     ),
+    .AXI_rlast_i        (AXI_Slv1_rlast     ),
+    .AXI_rready_o       (AXI_Slv1_rready    ),
+    .AXI_rresp_i2       (AXI_Slv1_rresp     ),
+    .AXI_rvalid_i       (AXI_Slv1_rvalid    ),
+    // AXI写数据
+    .AXI_wdata_o32      (AXI_Slv2_wdata     ),
+    .AXI_wlast_o        (AXI_Slv2_wlast     ),
+    .AXI_wready_i       (AXI_Slv2_wvalid    ),
+    .AXI_wstrb_o4       (AXI_Slv2_wstrb     ),
+    .AXI_wvalid_o       (AXI_Slv2_wvalid    ),
+
+    .EXT_WR_start_i     (WR_start           ),
+    .EXT_WR_addr_i32    (WR_addr            ),
+    .EXT_WR_len_i32     (WR_len             ), 
+    .EXT_WR_data_i32    (WR_data            ),
+    .EXT_WR_done_o      (WR_done            ),
+
+    .EXT_RD_start_i     (RD_start           ),
+    .EXT_RD_addr_i32    (RD_addr            ),
+    .EXT_RD_len_i32     (RD_len             ), 
+    .EXT_RD_data_o32    (RD_data            ),
+    .EXT_RD_done_o      (RD_done            )
+    );
 endmodule
